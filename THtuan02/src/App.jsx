@@ -29,6 +29,48 @@ function App() {
     SetResult1((parseInt(A)+parseInt(B)))
   }
 
+  // Bai 3 : cong tru nhan chia
+  const[result2,SetResult2] = useState('')
+  const[operator,SetOperator] = useState('')
+
+  function handelChangeradio(e){
+    SetOperator(e.target.value)
+  }
+  function handelClickBai03() {
+    const numA = parseFloat(A);
+    const numB = parseFloat(B);
+
+    if (isNaN(numA) || isNaN(numB)) {
+      SetResult2("Please enter valid numbers");
+      return;
+    }
+
+    let result;
+    switch (operator) {
+      case '+':
+        result = numA + numB;
+        break;
+      case '-':
+        result = numA - numB;
+        break;
+      case '*':
+        result = numA * numB;
+        break;
+      case '/':
+        if (numB === 0) {
+          result = "Cannot divide by zero";
+        } else {
+          result = numA / numB;
+        }
+        break;
+      default:
+        result = "Please select an operator";
+        break;
+    }
+
+    SetResult2(result);
+  }
+
   return (
     <>
     <div>
@@ -49,6 +91,22 @@ function App() {
       <button onClick={handelChangeClickBai2}>Click</button>
       <br />
       <span>{result1}</span>
+    </div>
+
+    <div>
+      <h1>Bai 3</h1>
+      <input type="text" onChange={handelChangeA} placeholder='Nhap so A' />
+      <input type="text" onChange={handelChangeB} placeholder='Nhap so B' />
+      <br />
+      <input type="radio" name="group" onChange={handelChangeradio} value='+'/> <span>+</span>
+      <input type="radio" name="group" onChange={handelChangeradio} value='-'/> <span>-</span>
+      <input type="radio" name="group" onChange={handelChangeradio} value='*'/> <span>*</span>
+      <input type="radio" name="group" onChange={handelChangeradio} value='/'/> <span>/</span>
+      <br />
+      <br />
+      <button onClick={handelClickBai03}>Click</button>
+      <br />
+      <span>{result2}</span>
     </div>
       
     </>

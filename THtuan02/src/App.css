@@ -59,22 +59,21 @@ button:hover {
   background-color: #45a049; 
 }
 
-input {
+input[type="text"] {
   width: 100%; 
-  padding: 12px 20px; 
-  margin: 8px 0; 
-  border: 1px solid #ccc; 
-  border-radius: 4px;
-  box-sizing: border-box; 
-  font-size: 16px; 
-  color: #333; 
-  background-color: #f9f9f9; 
-  transition: border-color 0.3s; 
+padding: 20px 20px; 
+margin: 8px 0; 
+border: 1px solid #ccc; 
+border-radius: 4px;
+box-sizing: border-box; 
+font-size: 16px; 
+color: #333; 
+background-color: #f9f9f9; 
+transition: border-color 0.3s; 
 }
 
-
-input:focus {
-  border-color: #4CAF50; 
-  outline: none; 
-  background-color: #fff; 
+input[type="radio"] {
+  display: inline-block; 
+  margin-right: 10px; 
 }
+
