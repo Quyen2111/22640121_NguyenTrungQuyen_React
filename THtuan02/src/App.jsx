@@ -3,6 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const obj = {
+  button1: 'The sun sets slowly over the horizon, painting the sky with beautiful shades of orange and purple.',
+  button2: 'Traveling allows you to discover new places, meet interesting people, and experience diverse cultures that broaden your mind.',
+  button3: 'Reading books is a great way to escape reality, learn new things, and improve your language skills',
+  button4: 'Working hard every day helps build resilience and perseverance, which are essential for achieving long-term success and happiness.',
+}
 function App() {
   // Bai 1
   const[name,SetName] = useState('')
@@ -71,6 +77,18 @@ function App() {
     SetResult2(result);
   }
 
+  // Bai 4 : khi nhan vao button thi hien thi ra van ban tuong ung
+
+  
+  const[button,SetButton] = useState('')
+
+  function handelChangeClickBai4(e){
+    const buttonKey = e.target.innerText.toLowerCase(); 
+    SetButton(obj[buttonKey]);
+  }
+
+
+
   return (
     <>
     <div>
@@ -109,6 +127,16 @@ function App() {
       <span>{result2}</span>
     </div>
       
+    <div>
+      <h1>Bai 4</h1>
+      <button onClick={handelChangeClickBai4}>Button1 </button> 
+      <button onClick={handelChangeClickBai4}>Button2 </button>
+      <button onClick={handelChangeClickBai4}>Button3 </button>
+      <button onClick={handelChangeClickBai4}>Button4 </button>
+      <hr />
+      <span>{button}</span>
+
+    </div>
     </>
   )
 }
