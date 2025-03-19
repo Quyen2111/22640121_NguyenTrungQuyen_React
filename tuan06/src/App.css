@@ -124,4 +124,45 @@
       font-size: 20px;
     }
   }
+
+  .todo-list {
+    padding: 20px;
+  }
+  
+  .todo-input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .todo-input {
+    padding: 5px;
+    width: 200px;
+  }
+  
+  .todo-list-items {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .todo-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f4f4f4;
+  }
+  
+  .todo-list-items button {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .todo-list-items button:hover {
+    background-color: #45a049;
+  }
+  
   
