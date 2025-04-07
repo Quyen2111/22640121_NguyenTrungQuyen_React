@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import CustomerData from "../data/CustomeData.js";
 import Edit from "../image/create.png"
 
-
 export const CustomDataTable = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRows, setSelectedRows] = useState(new Set());
+  const [editingCustomer, setEditingCustomer] = useState(null);
+  const [updatedCustomerData, setUpdatedCustomerData] = useState({});
+
+  
 
   const filteredData = CustomerData.filter((customer) =>
     customer.customername.toLowerCase().includes(searchTerm.toLowerCase())
@@ -20,7 +23,6 @@ export const CustomDataTable = () => {
     }
   };
 
-
   const toggleSelectRow = (index) => {
     const newSelectedRows = new Set(selectedRows);
     if (newSelectedRows.has(index)) {
@@ -29,6 +31,24 @@ export const CustomDataTable = () => {
       newSelectedRows.add(index);
     }
     setSelectedRows(newSelectedRows);
+  };
+
+  const handleEditClick = (customer) => {
+    setEditingCustomer(customer); 
+    setUpdatedCustomerData({ ...customer }); 
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setUpdatedCustomerData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSave = () => {
+    const index = CustomerData.findIndex((cust) => cust.customername === editingCustomer.customername);
+    if (index !== -1) {
+      CustomerData[index] = updatedCustomerData; 
+    }
+    setEditingCustomer(null);
   };
 
   return (
@@ -77,48 +97,101 @@ export const CustomDataTable = () => {
               <td className="py-2 px-4 border-b">{customer.orderdate}</td>
               <td className="py-2 px-4 border-b">
                 <span
-                  className={`px-2 py-1 rounded-full text-white ${
+                  className={`px-2 py-1 rounded-full text-white flex items-center justify-center ${
                     customer.status === "New"
-                      ? "bg-green-500"
+                      ? "bg-blue-500"
                       : customer.status === "In-progress"
                       ? "bg-yellow-500"
-                      : "bg-blue-500"
+                      : "bg-green-500"
                   }`}
                 >
                   {customer.status}
                 </span>
               </td>
               <td className="py-2 px-4 border-b text-center">
-                <button className="px-4 py-2">
-                  <img src={Edit} alt="" className="px-2 w-[40px] h-[25px]" />
+                <button className="px-4 py-2" onClick={() => handleEditClick(customer)}>
+                  <img src={Edit} alt="Edit" className="px-2 w-[40px] h-[25px]" />
                 </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+
+      {editingCustomer && (
+        <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg w-1/3">
+            <h3 className="text-xl mb-4">Edit Customer</h3>
+               
+
+            <div>
+              <label className="block mb-2">Customer Name</label>
+              <input
+                type="text"
+                name="customername"
+                value={updatedCustomerData.customername}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded mb-4"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Company</label>
+              <input
+                type="text"
+                name="company"
+                value={updatedCustomerData.company}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded mb-4"
+              />
+            </div>
+            <div>
+              <label className="block mb-2">Order Value</label>
+              <input
+                type="text"
+                name="ordervalue"
+                value={updatedCustomerData.ordervalue}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded mb-4"
+              />
+            </div>
+            <div className="flex justify-between">
+              <button
+                onClick={() => setEditingCustomer(null)}
+                className="px-4 py-2 bg-gray-500 text-white rounded"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleSave}
+                className="px-4 py-2 bg-blue-500 text-white rounded"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="flex justify-between items-center py-4">
-    <span className="text-sm text-gray-700">Showing 1 to 10 of 100 results</span>
-    <div className="flex space-x-2">
-      <button className="px-4 py-2 border rounded-md text-sm text-gray-700 hover:bg-gray-200">
-        &lt; Prev
-      </button>
-      <button className="px-4 py-2 border rounded-md text-sm text-gray-700 hover:bg-gray-200">
-        1
-      </button>
-      <button className="px-4 py-2 border rounded-md text-sm text-gray-700 hover:bg-gray-200">
-        2
-      </button>
-      <button className="px-4 py-2 border rounded-md text-sm text-gray-700 hover:bg-gray-200">
-        3
-      </button>
-      <button className="px-4 py-2 border rounded-md text-sm text-gray-700 hover:bg-gray-200">
-        &gt; Next
-      </button>
+        <span className="text-sm text-gray-700">Showing 1 to 10 of 100 results</span>
+        <div className="flex space-x-2">
+          <button className="px-4 py-2 border rounded-md text-sm text-gray-700 hover:bg-gray-200">
+            &lt; Prev
+          </button>
+          <button className="px-4 py-2 border rounded-md text-sm text-gray-700 hover:bg-gray-200">
+            1
+          </button>
+          <button className="px-4 py-2 border rounded-md text-sm text-gray-700 hover:bg-gray-200">
+            2
+          </button>
+          <button className="px-4 py-2 border rounded-md text-sm text-gray-700 hover:bg-gray-200">
+            3
+          </button>
+          <button className="px-4 py-2 border rounded-md text-sm text-gray-700 hover:bg-gray-200">
+            &gt; Next
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-    </div>
-    
   );
- 
-}
+};
