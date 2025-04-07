@@ -45,7 +45,7 @@ export const CustomLink = () => {
             <div className="flex flex-col items-center justify-center mt-10 bg-blue-200 mx-5">
                 <img src={Logo1} alt="" className="w-[250px] h-[300px] py-5" />
 
-                <button className="px-4 py-2 border-2 border-blue-500 text-blue-500 bg-white rounded-lg hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">
+                <button className="px-10 py-2 border-2 border-blue-500 text-blue-500 bg-white rounded-lg hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">
                     Try now
                 </button>
             </div>

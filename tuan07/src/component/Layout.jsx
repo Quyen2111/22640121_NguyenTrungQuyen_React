@@ -9,6 +9,8 @@ import FileText from "../image/File text 1.png"
 import Logo from "../image/Image 1858.png"
 import { CustomDataTable } from "./CustomDataTable";
 import { CustomLink } from "./CustomeLink";
+import Download from "../image/Download.png"
+import Moveup from "../image/Move up.png"
 
 
 
@@ -57,8 +59,19 @@ export const Layout = () =>{
     
             <div className="flex-col bg-white bg-opacity-80 p-2 ">
                 <div className="flex">
-                <img src={FileText} alt="" className="px-2 w-[40px] h-[25px]"/>
-                <h4 className="text-xl font-bold">Detailed report</h4>
+                    <img src={FileText} alt="" className="px-2 w-[40px] h-[25px]"/>
+                    <h4 className="text-xl font-bold">Detailed report</h4>
+                    <div className="flex ml-auto items-center">  
+                        <button className="flex items-center px-5 py-2 border-2 border-pink-500 text-white-500 bg-white rounded-lg hover:bg-pink-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-pink-200 focus:ring-offset-2 mr-2">
+                            <img src={Download} alt="" className="px-1 w-[30px] h-[25px]" />
+                            <p className="text-pink-500 ml-2">import</p> 
+                        </button>
+                        <button className="flex items-center px-5 py-2 border-2 border-pink-500 text-white-500 bg-white rounded-lg hover:bg-pink-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-pink-200 focus:ring-offset-2">
+                            <img src={Moveup} alt="" className="px-1 w-[30px] h-[25px]" />
+                            <p className="text-pink-500 ml-2">Export</p> 
+                        </button>
+                    </div>
+                  
                 </div>
                 <CustomDataTable/>
             </div>
