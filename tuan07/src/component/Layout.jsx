@@ -1,34 +1,63 @@
 import React from "react";
 import { LayAPI } from "./LayAPI";
+import Squaresfour from "../image/Squares four 1.png";
+import Search from "../image/Search.png"
+import Bell from "../image/Bell 1.png"
+import Question from "../image/Question 1.png"
+import Avatar from "../image/Avatar 313.png"
+import FileText from "../image/File text 1.png"
+import { CustomDataTable } from "./CustomDataTable";
+
+
 
 export const Layout = () =>{
    return(
-    <div class="grid grid-cols-[1fr_3fr] gap-1 p-1 bg-blue-500 h-screen">
+    <div className="grid grid-cols-[1fr_3fr] gap-1 p-1 bg-gray-200 min-h-screen">
 
-        <div class="bg-white bg-opacity-80 p-2 text-center ">
-        <a href="#" class="block">Link 1</a>
-        <a href="#" class="block">Link 2</a>
-        <a href="#" class="block">Link 3</a>
+        <div className="bg-white bg-opacity-80 p-2 text-center ">
+        <a href="#" className="block">Link 1</a>
+        <a href="#" className="block">Link 2</a>
+        <a href="#" className="block">Link 3</a>
         </div>
   
-        <div class="grid grid-rows-[0.5fr_2fr_5fr] gap-1 h-screen">
+        <div className="grid grid-rows-[0.5fr_2fr_5fr] gap-1 h-screen">
 
-            <div class="bg-white bg-opacity-80 p-2 text-center flex ">
-                <h2 class="text-xl font-bold text-pink-500">Dashboard</h2>
-                <input type="text" placeholder="search..." class="px-9 py-2 w-full sm:w-auto border border-gray-300 rounded-lg ml-190 "></input>
+            <div className="bg-white bg-opacity-80 p-2 text-center flex ">
+                <h2 className="text-xl font-bold text-pink-500">Dashboard</h2>
+                <div className="flex ml-auto relative w-full sm:w-auto">
+                    <span className="absolute inset-y-0 left-0 pl-3 flex items-center">
+                        <img src={Search} alt="search" className="w-5 h-5" />
+                    </span>
+                    <input type="text" placeholder="search..." className="pl-10 px-30 py-2 border border-gray-300 rounded-lg "></input>
+                    <button onClick={() => console.log(`Clicked image ${Bell}`)}>
+                         <img src={Bell} alt="" className="px-2 w-[40px] h-[25px]" />
+                     </button>
+                     <button onClick={() => console.log(`Clicked image ${Question}`)}>
+                         <img src={Question} alt="" className="px-2 w-[40px] h-[25px]" />
+                     </button>
+                     <button onClick={() => console.log(`Clicked image ${Avatar}`)}>
+                         <img src={Avatar} alt="" className="px-2 w-[40px] h-[25px]" />
+                     </button>
+                </div>
+
             </div>
     
-            <div class="bg-white bg-opacity-80 p-2 ">
-                <div>
-                    <h1 class="text-xl font-bold text-pink-500">
+            <div className="bg-white bg-opacity-80 p-2 ">
+                <div className="flex">
+                    <img src={Squaresfour} alt="" className="px-2 w-[40px] h-[25px]"/>
+                    <h1 className="text-xl font-bold ">
                         Overview
                     </h1>
                 </div>
                 <LayAPI/>
             </div>
     
-            <div class="bg-white bg-opacity-80 p-2 text-center flex items-center justify-center">
-                <h4 class="text-md font-medium">Footer</h4>
+            <div className="flex-col bg-white bg-opacity-80 p-2 ">
+                <div className="flex">
+                <img src={FileText} alt="" className="px-2 w-[40px] h-[25px]"/>
+                <h4 className="text-xl font-bold">Detailed report</h4>
+                </div>
+                <CustomDataTable/>
             </div>
         </div>
   </div>
