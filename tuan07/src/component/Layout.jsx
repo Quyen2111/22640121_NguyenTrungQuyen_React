@@ -6,7 +6,9 @@ import Bell from "../image/Bell 1.png"
 import Question from "../image/Question 1.png"
 import Avatar from "../image/Avatar 313.png"
 import FileText from "../image/File text 1.png"
+import Logo from "../image/Image 1858.png"
 import { CustomDataTable } from "./CustomDataTable";
+import { CustomLink } from "./CustomeLink";
 
 
 
@@ -15,9 +17,10 @@ export const Layout = () =>{
     <div className="grid grid-cols-[1fr_3fr] gap-1 p-1 bg-gray-200 min-h-screen">
 
         <div className="bg-white bg-opacity-80 p-2 text-center ">
-        <a href="#" className="block">Link 1</a>
-        <a href="#" className="block">Link 2</a>
-        <a href="#" className="block">Link 3</a>
+            <div className="flex flex-col">
+            <img src={Logo} alt="" className="px-2 w-[150px] h-[40px]" />
+            <CustomLink/>
+            </div>
         </div>
   
         <div className="grid grid-rows-[0.5fr_2fr_5fr] gap-1 h-screen">

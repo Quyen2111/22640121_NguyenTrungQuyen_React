@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CustomerData from "../data/CustomeData.js";
+import Edit from "../image/create.png"
 
 
 export const CustomDataTable = () => {
@@ -88,8 +89,8 @@ export const CustomDataTable = () => {
                 </span>
               </td>
               <td className="py-2 px-4 border-b text-center">
-                <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
-                  Edit
+                <button className="px-4 py-2">
+                  <img src={Edit} alt="" className="px-2 w-[40px] h-[25px]" />
                 </button>
               </td>
             </tr>
