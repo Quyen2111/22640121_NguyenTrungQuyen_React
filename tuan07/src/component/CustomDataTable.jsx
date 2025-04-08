@@ -1,16 +1,22 @@
-import React, { useState } from "react";
-import CustomerData from "../data/CustomeData.js";
-import Edit from "../image/create.png"
+import React, { useState, useEffect } from "react";
+import Edit from "../image/create.png";
 
 export const CustomDataTable = () => {
+  const [customerData, setCustomerData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedRows, setSelectedRows] = useState(new Set());
   const [editingCustomer, setEditingCustomer] = useState(null);
   const [updatedCustomerData, setUpdatedCustomerData] = useState({});
 
-  
 
-  const filteredData = CustomerData.filter((customer) =>
+  useEffect(() => {
+    fetch("https://67ecb27daa794fb3222e7adf.mockapi.io/subnav1/customer")
+      .then((res) => res.json())
+      .then((data) => setCustomerData(data))
+      .catch((error) => console.error("Fetch error:", error));
+  }, []);
+
+  const filteredData = customerData.filter((customer) =>
     customer.customername.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -34,8 +40,8 @@ export const CustomDataTable = () => {
   };
 
   const handleEditClick = (customer) => {
-    setEditingCustomer(customer); 
-    setUpdatedCustomerData({ ...customer }); 
+    setEditingCustomer(customer);
+    setUpdatedCustomerData({ ...customer });
   };
 
   const handleInputChange = (e) => {
@@ -43,13 +49,34 @@ export const CustomDataTable = () => {
     setUpdatedCustomerData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSave = () => {
-    const index = CustomerData.findIndex((cust) => cust.customername === editingCustomer.customername);
-    if (index !== -1) {
-      CustomerData[index] = updatedCustomerData; 
-    }
+  const handleSave = async () => {
+  try {
+    const response = await fetch(
+      `https://67ecb27daa794fb3222e7adf.mockapi.io/subnav1/customer/${editingCustomer.id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedCustomerData),
+      }
+    );
+
+    if (!response.ok) throw new Error("Failed to update customer");
+
+    const updatedCustomer = await response.json();
+
+    setCustomerData((prevData) =>
+      prevData.map((cust) =>
+        cust.id === updatedCustomer.id ? updatedCustomer : cust
+      )
+    );
+
     setEditingCustomer(null);
-  };
+  } catch (err) {
+    console.error("Error updating customer:", err);
+  }
+};
 
   return (
     <div className="overflow-x-auto px-4 py-4">
@@ -75,7 +102,7 @@ export const CustomDataTable = () => {
         </thead>
         <tbody>
           {filteredData.map((customer, index) => (
-            <tr key={index} className="hover:bg-gray-50">
+            <tr key={customer.id} className="hover:bg-gray-50">
               <td className="py-2 px-4 border-b">
                 <input
                   type="checkbox"
@@ -122,7 +149,7 @@ export const CustomDataTable = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-50">
           <div className="bg-white p-6 rounded-lg w-1/3">
             <h3 className="text-xl mb-4">Edit Customer</h3>
-               
+
 
             <div>
               <label className="block mb-2">Customer Name</label>
@@ -172,7 +199,7 @@ export const CustomDataTable = () => {
         </div>
       )}
 
-      <div className="flex justify-between items-center py-4">
+<div className="flex justify-between items-center py-4">
         <span className="text-sm text-gray-700">Showing 1 to 10 of 100 results</span>
         <div className="flex space-x-2">
           <button className="px-4 py-2 border rounded-md text-sm text-gray-700 hover:bg-gray-200">

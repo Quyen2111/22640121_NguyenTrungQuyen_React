@@ -29,7 +29,7 @@ const data = [
       ordervalue: "$541",
       orderdate: "31/08/2023",
       status: "In-progress",
-      avatar: "../images/Avatar (4).png",
+      avatar: "../images/Avatar (3).png",
     },
     {
       customername: "Ryan Young",
