@@ -11,33 +11,33 @@ import Logo1 from "../image/Group.png";
 export const CustomLink = () => {
     return (
         <div className="flex flex-col py-5">
-            {/* Sử dụng Link thay vì button để chuyển trang */}
-            <Link to="/customdatapage" className="flex items-center space-x-2 py-3 focus:outline-none focus:ring-2 focus:ring-pink-500 hover:bg-pink-500 hover:text-white">
+
+            <Link to="/customdatapage" className="flex items-center space-x-2 py-3 ">
                 <img src={Squaresfour1} alt="" className="w-[30px] h-[25px]" />
                 <p className="text-sm font-bold">Dashboard</p>
             </Link>
 
-            <Link to="/projects" className="flex items-center space-x-2 py-3 focus:outline-none focus:ring-2 focus:ring-pink-500 hover:bg-pink-500 hover:text-white">
+            <Link to="/projects" className="flex items-center space-x-2 py-3 ">
                 <img src={Folder} alt="" className="w-[30px] h-[25px]" />
                 <p className="text-sm font-bold">Projects</p>
             </Link>
 
-            <Link to="/teams" className="flex items-center space-x-2 py-3 focus:outline-none focus:ring-2 focus:ring-pink-500 hover:bg-pink-500 hover:text-white">
+            <Link to="/teams" className="flex items-center space-x-2 py-3 ">
                 <img src={Team} alt="" className="w-[30px] h-[25px]" />
                 <p className="text-sm font-bold">Teams</p>
             </Link>
 
-            <Link to="/analytics" className="flex items-center space-x-2 py-3 focus:outline-none focus:ring-2 focus:ring-pink-500 hover:bg-pink-500 hover:text-white">
+            <Link to="/analytics" className="flex items-center space-x-2 py-3 ">
                 <img src={PieChart} alt="" className="w-[30px] h-[25px]" />
                 <p className="text-sm font-bold">Analytics</p>
             </Link>
 
-            <Link to="/messages" className="flex items-center space-x-2 py-3 focus:outline-none focus:ring-2 focus:ring-pink-500 hover:bg-pink-500 hover:text-white">
+            <Link to="/messages" className="flex items-center space-x-2 py-3 ">
                 <img src={Chat} alt="" className="w-[30px] h-[25px]" />
                 <p className="text-sm font-bold">Messages</p>
             </Link>
 
-            <Link to="/integrations" className="flex items-center space-x-2 py-3 focus:outline-none focus:ring-2 focus:ring-pink-500 hover:bg-pink-500 hover:text-white">
+            <Link to="/integrations" className="flex items-center space-x-2 py-3 ">
                 <img src={Code} alt="" className="w-[30px] h-[25px]" />
                 <p className="text-sm font-bold">Integrations</p>
             </Link>
