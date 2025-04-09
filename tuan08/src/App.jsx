@@ -103,7 +103,7 @@ const App = () => {
       </header>
 
       {/* Recipe of the Day */}
-      <section className="relative my-10">
+      {/* <section className="relative my-10">
         <img src="https://imgur.com/jnRVE5Y.png" alt="Recipe of the day" className="w-full h-auto object-cover" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="bg-white p-6 rounded-xl shadow-lg max-w-md text-center">
@@ -118,10 +118,10 @@ const App = () => {
             <button className="mt-2 bg-pink-500 text-white px-4 py-2 rounded-full text-sm">View now →</button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Summer Recipes */}
-      <section className="text-center my-10">
+      {/* <section className="text-center my-10">
         <h2 className="text-2xl font-bold text-pink-600">This Summer Recipes</h2>
         <p className="text-gray-500 mb-6">We have all your Independence Day sweets covered.</p>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 px-6">
@@ -135,10 +135,10 @@ const App = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Recipes With Videos */}
-      <section className="text-center my-10">
+      {/* <section className="text-center my-10">
         <h2 className="text-2xl font-bold text-pink-600">Recipes With Videos</h2>
         <p className="text-gray-500 mb-6">Cooking Up Culinary Creations with Step-by-Step Videos</p>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 px-6">
@@ -152,10 +152,10 @@ const App = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Editor's Pick */}
-      <section className="text-center my-10">
+      {/* <section className="text-center my-10">
         <h2 className="text-2xl font-bold text-pink-600">Editor's pick</h2>
         <p className="text-gray-500 mb-6">Curated Culinary Delights: Handpicked Favorites by Our Expert Editors!</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
@@ -171,10 +171,10 @@ const App = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-10 px-6">
+      {/* <footer className="bg-gray-900 text-white py-10 px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div>
             <h4 className="font-bold mb-2">About Us</h4>
@@ -220,7 +220,7 @@ const App = () => {
           </div>
           <div className="text-gray-400">Terms of Service | Privacy Policy</div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 };
