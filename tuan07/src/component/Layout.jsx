@@ -73,7 +73,7 @@ export const Layout = () =>{
                     </div>
                   
                 </div>
-                {/* <CustomDataTable/> */}
+                <CustomDataTable/>
             </div>
         </div>
   </div>
