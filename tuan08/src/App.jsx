@@ -174,7 +174,7 @@ const App = () => {
       </section>
 
       {/* Footer */}
-      {/* <footer className="bg-gray-900 text-white py-10 px-6">
+      <footer className="bg-gray-900 text-white py-10 px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div>
             <h4 className="font-bold mb-2">About Us</h4>
@@ -220,7 +220,7 @@ const App = () => {
           </div>
           <div className="text-gray-400">Terms of Service | Privacy Policy</div>
         </div>
-      </footer> */}
+      </footer>
     </div>
   );
 };
