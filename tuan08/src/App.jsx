@@ -138,7 +138,7 @@ const App = () => {
       </section>
 
       {/* Recipes With Videos */}
-      {/* <section className="text-center my-10">
+      <section className="text-center my-10">
         <h2 className="text-2xl font-bold text-pink-600">Recipes With Videos</h2>
         <p className="text-gray-500 mb-6">Cooking Up Culinary Creations with Step-by-Step Videos</p>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 px-6">
@@ -152,7 +152,7 @@ const App = () => {
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
 
       {/* Editor's Pick */}
       {/* <section className="text-center my-10">
