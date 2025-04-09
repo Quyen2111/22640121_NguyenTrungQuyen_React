@@ -21,7 +21,7 @@ export const Layout = () =>{
         <div className="bg-white bg-opacity-80 p-2 text-center ">
             <div className="flex flex-col">
             <img src={Logo} alt="" className="px-2 w-[150px] h-[40px]" />
-            {/* <CustomLink/> */}
+            <CustomLink/>
             </div>
         </div>
   
