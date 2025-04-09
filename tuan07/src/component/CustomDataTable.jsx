@@ -91,13 +91,13 @@ export const CustomDataTable = () => {
                 checked={filteredData.length === selectedRows.size}
               />
             </th>
-            <th className="py-2 px-4 border-b text-left">Avatar</th>
-            <th className="py-2 px-4 border-b text-left">Customer Name</th>
-            <th className="py-2 px-4 border-b text-left">Company</th>
-            <th className="py-2 px-4 border-b text-left">Order Value</th>
-            <th className="py-2 px-4 border-b text-left">Order Date</th>
-            <th className="py-2 px-4 border-b text-left">Status</th>
-            <th className="py-2 px-4 border-b text-left">Action</th>
+            <th className="py-2 px-4 border-b text-center">Avatar</th>
+            <th className="py-2 px-4 border-b text-center">Customer Name</th>
+            <th className="py-2 px-4 border-b text-center">Company</th>
+            <th className="py-2 px-4 border-b text-center">Order Value</th>
+            <th className="py-2 px-4 border-b text-center">Order Date</th>
+            <th className="py-2 px-4 border-b text-center">Status</th>
+            <th className="py-2 px-4 border-b text-center">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -111,17 +111,17 @@ export const CustomDataTable = () => {
                   onChange={() => toggleSelectRow(index)}
                 />
               </td>
-              <td className="py-2 px-4 border-b">
+              <td className="py-2 px-4 border-b items-center justify-center ">
                 <img
                   src={customer.avatar}
                   alt={customer.customername}
                   className="w-8 h-8 rounded-full"
                 />
               </td>
-              <td className="py-2 px-4 border-b">{customer.customername}</td>
-              <td className="py-2 px-4 border-b">{customer.company}</td>
-              <td className="py-2 px-4 border-b">{customer.ordervalue}</td>
-              <td className="py-2 px-4 border-b">{customer.orderdate}</td>
+              <td className="py-2 px-4 border-b text-center">{customer.customername}</td>
+              <td className="py-2 px-4 border-b text-center">{customer.company}</td>
+              <td className="py-2 px-4 border-b text-center">{customer.ordervalue}</td>
+              <td className="py-2 px-4 border-b text-center">{customer.orderdate}</td>
               <td className="py-2 px-4 border-b">
                 <span
                   className={`px-2 py-1 rounded-full text-white flex items-center justify-center ${
