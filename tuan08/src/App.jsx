@@ -121,7 +121,7 @@ const App = () => {
       </section>
 
       {/* Summer Recipes */}
-      {/* <section className="text-center my-10">
+      <section className="text-center my-10">
         <h2 className="text-2xl font-bold text-pink-600">This Summer Recipes</h2>
         <p className="text-gray-500 mb-6">We have all your Independence Day sweets covered.</p>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 px-6">
@@ -135,7 +135,7 @@ const App = () => {
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
 
       {/* Recipes With Videos */}
       {/* <section className="text-center my-10">
