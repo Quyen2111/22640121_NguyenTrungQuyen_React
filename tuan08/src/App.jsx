@@ -103,7 +103,7 @@ const App = () => {
       </header>
 
       {/* Recipe of the Day */}
-      {/* <section className="relative my-10">
+      <section className="relative my-10">
         <img src="https://imgur.com/jnRVE5Y.png" alt="Recipe of the day" className="w-full h-auto object-cover" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="bg-white p-6 rounded-xl shadow-lg max-w-md text-center">
@@ -118,7 +118,7 @@ const App = () => {
             <button className="mt-2 bg-pink-500 text-white px-4 py-2 rounded-full text-sm">View now →</button>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Summer Recipes */}
       {/* <section className="text-center my-10">
