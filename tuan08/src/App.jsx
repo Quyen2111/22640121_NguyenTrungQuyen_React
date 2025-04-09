@@ -155,7 +155,7 @@ const App = () => {
       </section>
 
       {/* Editor's Pick */}
-      {/* <section className="text-center my-10">
+      <section className="text-center my-10">
         <h2 className="text-2xl font-bold text-pink-600">Editor's pick</h2>
         <p className="text-gray-500 mb-6">Curated Culinary Delights: Handpicked Favorites by Our Expert Editors!</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
@@ -171,7 +171,7 @@ const App = () => {
             </div>
           ))}
         </div>
-      </section> */}
+      </section>
 
       {/* Footer */}
       {/* <footer className="bg-gray-900 text-white py-10 px-6">
