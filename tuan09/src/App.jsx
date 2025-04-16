@@ -5,8 +5,11 @@ import TodoList from './features/todo/TodoList';
 import ThemeToggle from './components/themeToggle.jsx';
 import ProductList from './components/productList.jsx';
 import ShoppingCart from './components/shoppingCart.jsx';
+import Login from './components/Login.jsx';
+import Welcome from './components/Welcome.jsx';
 function App() {
   const mode = useSelector((state) => state.theme.mode);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   return (
     <div
     className={`min-h-screen ${mode === 'light' ? 'bg-white text-black' : 'bg-gray-900 text-white'} transition-colors`}
@@ -37,6 +40,9 @@ function App() {
       <ProductList />
       <ShoppingCart />
     </div>
+    <div className="container max-w-lg mx-auto p-4">
+        {isLoggedIn ? <Welcome /> : <Login />}
+      </div>
   </div>
   );
 }
