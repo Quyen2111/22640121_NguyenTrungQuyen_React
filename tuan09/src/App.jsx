@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import Counter from './features/counter/Counter';
 import TodoList from './features/todo/TodoList';
 import ThemeToggle from './components/themeToggle.jsx';
+import ProductList from './components/productList.jsx';
+import ShoppingCart from './components/shoppingCart.jsx';
 function App() {
   const mode = useSelector((state) => state.theme.mode);
   return (
@@ -28,6 +30,13 @@ function App() {
       </div>
       
       <TodoList />
+      <div className='justify-center text-center items-center'>
+      <h1 className='justify-center text-center items-center font-bold text-black-500 text-[30px]'>
+         Giỏ Hàng Redux
+      </h1>
+      <ProductList />
+      <ShoppingCart />
+    </div>
   </div>
   );
 }
